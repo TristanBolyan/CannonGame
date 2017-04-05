@@ -10,9 +10,11 @@ import android.view.MotionEvent;
  */
 public class CannonBall implements Animator {
     private int count = 0;
-    private boolean goBackwards = false;
+    private double para = 0.1;
+    private boolean goBackwards = true;
     private double xCord;
     private double yCord;
+    int angle = 45;
 
     public int interval() {
         return 30;
@@ -23,15 +25,15 @@ public class CannonBall implements Animator {
     }
     public void tick(Canvas g) {
         count++;
+        para = para *1.025;
 
-
-        xCord = (count*15)%1200;
-        yCord = ((count * 15) - (9.8 * ((count) ^ 2))) % 1200;//TODO add funtion to calculate hight
+        xCord = ((count*15)*Math.cos(angle));
+        yCord = ((count * 15) - (para * ((count*15) ^ 2)));//TODO add funtion to calculate hight
 
        // if (num < 0) num += 1200;
         Paint redPaint = new Paint();
         redPaint.setColor(Color.BLACK);
-        g.drawCircle((int)xCord, (int)yCord, 60, redPaint);
+        g.drawCircle((int)yCord, (int)xCord, 60, redPaint);
 
     }
 
@@ -54,7 +56,8 @@ public class CannonBall implements Animator {
         if (event.getAction() == MotionEvent.ACTION_DOWN)
         {
             goBackwards = !goBackwards;
-            count =0;
+            count =3;
+            para = 0.1;
         }
     }
 

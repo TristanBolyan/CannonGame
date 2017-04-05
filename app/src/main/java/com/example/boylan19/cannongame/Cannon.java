@@ -28,11 +28,7 @@ public class Cannon implements Animator {
         Paint redPaint = new Paint();
         redPaint.setColor(Color.GRAY);
 
-
-
-
     }
-
 
     public boolean doPause() {
         if (goBackwards)
