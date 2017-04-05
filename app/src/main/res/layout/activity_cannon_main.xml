@@ -25,23 +25,31 @@
         android:layout_weight="1"
         android:background="#0c00ef">
 
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Up"
+            android:id="@+id/up"
+            android:focusable="false"
+            android:layout_weight="1" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:text="Down"
+            android:id="@+id/down"
+            android:layout_weight="1" />
+
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="Angel: 45"
+            android:text="Angle: 45"
             android:id="@+id/Angle"
             android:layout_weight="1"
             android:textColor="#f70606"
             android:textSize="26dp"
             android:textAlignment="center"
             android:background="#5986c6" />
-
-        <SeekBar
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:id="@+id/AngleBar"
-            android:max="90"
-            android:layout_weight="8" />
 
         <LinearLayout
             android:orientation="vertical"
