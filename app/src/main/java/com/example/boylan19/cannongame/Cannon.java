@@ -1,5 +1,6 @@
 package com.example.boylan19.cannongame;
 
+import android.annotation.TargetApi;
 import android.graphics.*;
 import android.os.Build;
 import android.view.MotionEvent;
@@ -10,10 +11,7 @@ import android.view.MotionEvent;
 public class Cannon implements Animator {
     private int count = 0;
     private boolean goBackwards = false;
-    public int bottom;
-    public int top;
-    public int right;
-    public int left;
+
     public int interval() {
         return 30;
     }
@@ -21,25 +19,29 @@ public class Cannon implements Animator {
         // create/return the background color
         return Color.rgb(180, 200, 255);
     }
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     public void tick(Canvas g) {
-        if (goBackwards) {
-            count--;
-        }
-        else {
-            count++;
-        }
+        count++;
 
 
         int num = 0;
         Paint redPaint = new Paint();
         redPaint.setColor(Color.GRAY);
-        g.drawCircle(0, 0, 100, redPaint);
+
+
+
 
     }
 
 
     public boolean doPause() {
-        return false;
+        if (goBackwards)
+        {
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     public boolean doQuit() {
         return false;

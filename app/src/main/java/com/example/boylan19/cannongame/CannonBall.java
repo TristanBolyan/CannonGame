@@ -22,12 +22,7 @@ public class CannonBall implements Animator {
         return Color.rgb(180, 200, 255);
     }
     public void tick(Canvas g) {
-        if (goBackwards) {
-            count--;
-        }
-        else {
-            count++;
-        }
+        count++;
 
 
         xCord = (count*15)%1200;
@@ -42,8 +37,13 @@ public class CannonBall implements Animator {
 
 
     public boolean doPause() {
-
+        if (goBackwards)
+        {
+            return true;
+        }
+        else {
             return false;
+        }
     }
     public boolean doQuit() {
         return false;
@@ -53,6 +53,7 @@ public class CannonBall implements Animator {
     {
         if (event.getAction() == MotionEvent.ACTION_DOWN)
         {
+            goBackwards = !goBackwards;
             count =0;
         }
     }
