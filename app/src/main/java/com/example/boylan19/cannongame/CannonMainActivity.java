@@ -23,42 +23,22 @@ import org.w3c.dom.Text;
  * @version September 2012
  *
  */
-public class CannonMainActivity extends Activity implements View.OnClickListener {
+public class CannonMainActivity extends Activity  {
 
     /**
      * creates an AnimationCanvas containing a TestAnimator.
      */
-    private TextView angleT;
-    private Button up;
-    private Button down;
-    public int angle = 45;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cannon_main);
-        TextView angleT = (TextView) findViewById(R.id.Angle);
-        Button down = (Button) findViewById(R.id.down);
-        Button up = (Button) findViewById(R.id.up);
-        up.setOnClickListener(this);
-        down.setOnClickListener(this);
 
         // Create an animation canvas and place it in the main layout
-        Animator testAnim = new CannonBall();
+        Animator testAnim = new Cannon(this);
         AnimationCanvas myCanvas = new AnimationCanvas(this, testAnim);
         LinearLayout mainLayout = (LinearLayout) this.findViewById(R.id.topLevelLayout);
         mainLayout.addView(myCanvas);
-
-    }
-
-    @Override
-    public void onClick(View v) {
-        if(v == down){
-           angleT.setText("Angle:" + (angle--));
-        }
-        else if(v == up) {
-            angleT.setText("Angle:" + (angle++));
-        }
 
     }
 }

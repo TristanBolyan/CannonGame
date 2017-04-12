@@ -19,9 +19,9 @@ public class CannonBall {
     private static double xWindspeed;
 
     public CannonBall(double initXposition, double initXvelocity, double initYposition, double initYvelocity) {
-        Paint ball = new Paint();
-        ball.setColor(Color.BLACK);
-        ball.setStyle(Paint.Style.FILL);
+        Paint black = new Paint();
+        black.setColor(Color.BLACK);
+        black.setStyle(Paint.Style.FILL);
 
         this.xPosition = initXposition;
         this.xVelocity = initXvelocity;
@@ -29,17 +29,24 @@ public class CannonBall {
         this.yVelocity = initYvelocity;
     }
 
-    public double GetXPos() {
+    public double GetXPosition() {
         return xPosition;
     }
-    public double GetXVel() {
+    public double GetXVelocity() {
         return xVelocity;
     }
-    public double GetYPos() {
+    public double GetYPosition() {
         return yPosition;
     }
-    public double GetYVel() {
+    public double GetYVelocity() {
         return yVelocity;
+    }
+
+    public void Shot() {
+        xVelocity *= -0.2;
+        yVelocity *= 0.3;
+        if(xVelocity<0) xPosition -= 20;
+        else xPosition += 20;
     }
 
     public void ReDrawCannonBall() {
@@ -51,18 +58,11 @@ public class CannonBall {
             Ground();
         }
     }
+
     public void Ground() {
         yVelocity *= -0.2;
         if(xVelocity<1 && xVelocity>=0) xVelocity=1;
         else xVelocity=-1;
     }
-
-    public void Shot() {
-        xVelocity *= -0.2;
-        yVelocity *= 0.3;
-        if(xVelocity<0) xPosition -= 20;
-        else xPosition += 20;
-    }
-
 }
 
