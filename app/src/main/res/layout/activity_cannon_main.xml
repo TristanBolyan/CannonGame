@@ -18,57 +18,5 @@
         android:layout_height="0dp"
         android:layout_weight="9"></LinearLayout>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="#0c00ef">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="Up"
-            android:id="@+id/up"
-            android:focusable="false"
-            android:layout_weight="1" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="Down"
-            android:id="@+id/down"
-            android:layout_weight="1" />
-
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:text="Angle: 45"
-            android:id="@+id/Angle"
-            android:layout_weight="1"
-            android:textColor="#f70606"
-            android:textSize="26dp"
-            android:textAlignment="center"
-            android:background="#5986c6" />
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Fire by Taping Screen"
-                android:id="@+id/button"
-                android:layout_weight="1"
-                android:textColor="#000000"
-                android:background="#fb0101"
-                android:textSize="18dp"
-                android:textAlignment="center" />
-
-        </LinearLayout>
-    </LinearLayout>
 
 </LinearLayout>

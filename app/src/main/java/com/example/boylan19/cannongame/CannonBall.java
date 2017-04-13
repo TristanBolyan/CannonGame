@@ -44,9 +44,9 @@ public class CannonBall {
 
     public void Shot() {
         xVelocity *= -0.2;
-        yVelocity *= 0.3;
-        if(xVelocity<0) xPosition -= 20;
-        else xPosition += 20;
+        yVelocity *= 0.8;
+        if(xVelocity<0) xPosition -= 40;
+        else xPosition += 40;
     }
 
     public void ReDrawCannonBall() {
